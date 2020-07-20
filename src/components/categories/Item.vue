@@ -2,7 +2,7 @@
     <div class="category" :style="{ backgroundColor: color }">
         <h3 class="category__title">{{title}}</h3>
         <div class="category__todos">
-            <div class="category__todos" v-for="todo in todoByCategory" :key="todo.id">
+            <div :class="{ 'category__todos': true, 'category__todos--completed': !todo.active }" v-for="todo in todoByCategory" :key="todo.id">
                 - {{todo.todo}}
             </div>
         </div>

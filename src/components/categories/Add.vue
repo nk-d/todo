@@ -8,8 +8,7 @@
         <option value="#ffd6dd">Красный</option>
         <option value="#e3ffd1">Зеленый</option>
         <option value="#ffedcc">Оранжевый</option>
-        <option value="#ffff00">Желтый</option>
-        <option value="#ffffd1">Синий</option>
+        <option value="#ffffd1">Желтый</option>
         <option value="#e8ccff">Фиолетовый</option>
       </select>
       <button class="add__button">

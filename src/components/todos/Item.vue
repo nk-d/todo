@@ -1,10 +1,9 @@
 <template>
     <div class="todo">
-        <div class="todo__content" @click="statusHandler">
-            <div class="todo__text">{{todo.todo}}</div>
-            <div class="todo__status" v-if="!todo.active">Завершено</div>
+        <div :class="{ 'todo__text': true, 'todo__text--completed': !todo.active }" @click="statusHandler">
+            {{todo.todo}}
         </div>
-        <button @click="removeTodo(id)" class="todo__delete">X</button>
+        <button @click="removeTodo(todo.id)" class="todo__delete">X</button>
     </div>
 </template>
 

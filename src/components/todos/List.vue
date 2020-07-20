@@ -1,9 +1,8 @@
 <template>
-    <div class="list-categories">
+    <div class="list">
 
-        <div style="display: flex; align-items: center; justify-content: space-between">
+        <div class="list__header">
             <h1 class="header-level-1">Ваши задачи категории:</h1>
-            <router-link :to="{ name: 'Todos' }">Все задачи</router-link>
         </div>
 
         <Item

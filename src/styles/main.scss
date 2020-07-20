@@ -156,6 +156,10 @@ $borders:   #ebebeb;
     display: flex;
     margin-top: 15px;
   }
+
+  &__todos--completed {
+    text-decoration: line-through;
+  }
 }
 
 .todo {
@@ -163,10 +167,14 @@ $borders:   #ebebeb;
   border-radius: 5px;
   display: flex;
 
-  &__content {
+  &__text {
     display: flex;
     padding: 10px;
     flex: 1;
+
+    &--completed {
+      text-decoration: line-through;
+    }
   }
 
   &__delete {
