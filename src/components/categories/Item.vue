@@ -2,7 +2,7 @@
     <div class="category-item">
         <router-link :to="{ name: 'Todos', params: { id }}" :style="{color}" class="category-item__link">{{title}}</router-link>
         -
-        <button style="red" @click="removeCategory(id)" class="category-item__delete">X</button>
+        <button @click="removeCategory(id)" class="category-item__delete">X</button>
     </div>
 </template>
 

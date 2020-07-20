@@ -6,7 +6,7 @@
             <router-link :to="{ name: 'Todos' }">Все задачи</router-link>
         </div>
 
-        <Category
+        <Item
                 v-for="category in allCategories"
                 :key="category.id"
                 :title="category.title"
@@ -18,13 +18,13 @@
 
 <script>
     import { mapGetters } from "vuex";
-    import Category from '@/components/Category.vue';
+    import Item from './Item.vue';
 
     export default {
         name: 'ListCategories',
         computed: mapGetters(["allCategories"]),
         components: {
-            Category
+            Item
         }
     }
 </script>

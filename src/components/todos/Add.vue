@@ -31,7 +31,9 @@
             submitHandler () {
                 if (this.todo) {
 
-                    this.addTodo({ todo: this.todo, categoryId: this.categoryId });
+                    this.addTodo({
+                        todo: this.todo,
+                        categoryId: parseInt(this.categoryId) });
                     this.clearData();
 
                 } else {

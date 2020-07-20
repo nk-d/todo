@@ -11,10 +11,10 @@ const getters = {
 const actions = {
     addCategory({ commit, getters }, category) {
         let date = new Date(),
-            id = 0;
+            id = 1;
 
         if(getters.allCategories.length === 0) {
-            id = 0;
+            id = 1;
         } else {
             id = getters.allCategories[0].id + 1;
         }

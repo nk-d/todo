@@ -4,16 +4,17 @@
     <hr>
     <AddTodo v-if="$route.params.id !== undefined" :categoryId="$route.params.id" />
     <div v-else>Для добавления задачи, выберите категорию<hr /></div>
-    <h1>This is an todos page {{$route.params.id}}</h1>
+    <ListItems :categoryId="$route.params.id" />
   </div>
 </template>
 
 <script>
-  import AddTodo from '@/components/AddTodo.vue';
+  import AddTodo from '../components/todos/Add';
+  import ListItems from "../components/todos/List";
 
   export default {
     name: 'ListTodos',
-    components: { AddTodo }
+    components: { AddTodo, ListItems }
   }
 </script>
 

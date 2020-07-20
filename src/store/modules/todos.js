@@ -5,6 +5,10 @@ const state = {
 const getters = {
     allTodos(state) {
         return state.todos;
+    },
+    getTodosCategory(state, categoryId) {
+        console.log('id', categoryId);
+        return state.todos;
     }
 };
 

@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import AddCategories from '@/components/AddCategories.vue'
-import ListCategories from '@/components/ListCategories.vue'
+import AddCategories from '../components/categories/Add'
+import ListCategories from '../components/categories/List'
 
 export default {
   name: 'Home',
