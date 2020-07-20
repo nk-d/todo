@@ -4,7 +4,6 @@
     <h1 class="header-level-1 add__header">Добавление категории:</h1>
     <input type="text" v-model="title" name="title" placeholder="Название категории" class="add__title" />
     <select name="changeColor" v-model="color" id="color" class="add__change-color">
-      <option value="#dcdcdc">Серый</option>
       <option value="#ff0000">Красный</option>
       <option value="#66ff00">Зеленый</option>
       <option value="#ffa500">Оранжевый</option>
@@ -31,7 +30,7 @@
     data() {
       return {
         title: '',
-        color: '#dcdcdc',
+        color: '#ff0000',
         emptyTitle: false
       }
     },
@@ -40,7 +39,9 @@
       submitHandler () {
         if (this.title) {
 
-          this.addCategory(this.title, this.color);
+          this.addCategory({
+            title: this.title,
+            color: this.color });
           this.clearData();
 
         } else {
@@ -54,7 +55,7 @@
       },
       clearData() {
         this.title = '';
-        this.color = '#dcdcdc';
+        this.color = '#ff0000';
         this.emptyTitle = false;
       }
     }

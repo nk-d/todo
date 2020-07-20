@@ -3,31 +3,36 @@ const state = {
 };
 
 const getters = {
-    getCategories(state) {
+    allCategories(state) {
         return state.categories;
     }
 };
 
 const actions = {
-    addCategory({ commit, getters }, title, color) {
+    addCategory({ commit, getters }, category) {
         let date = new Date(),
-            id = 0,
-            length = getters.getCategories.length;
+            id = 0;
 
-        if(length === 0) {
+        if(getters.allCategories.length === 0) {
             id = 0;
         } else {
-            id = getters.getCategories[length - 1].id + 1;
+            id = getters.allCategories[0].id + 1;
         }
 
-        // console.log(getters.getCategories, length);
-
-        commit('newCategory', {id, title, color, date});
+        commit('newCategory', { id,
+            title: category.title,
+            color: category.color,
+            date });
+    },
+    removeCategory({ commit }, id) {
+        commit('deleteCategory', id);
     }
 };
 
 const mutations = {
     newCategory: (state, todo) => state.categories.unshift(todo),
+    deleteCategory: (state, id) =>
+        (state.categories = state.categories.filter(category => category.id !== id)),
 };
 
 export default {
