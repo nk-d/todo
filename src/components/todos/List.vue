@@ -2,16 +2,14 @@
     <div class="list-categories">
 
         <div style="display: flex; align-items: center; justify-content: space-between">
-            <h2 class="header-level-2">Ваши задачи категории:</h2>
+            <h1 class="header-level-1">Ваши задачи категории:</h1>
             <router-link :to="{ name: 'Todos' }">Все задачи</router-link>
         </div>
 
         <Item
                 v-for="todo in todoByCategory"
                 :key="todo.id"
-                :todo="todo.todo"
-                :id="todo.id"
-                :color="todo.color" />
+                :todo="todo" />
 
     </div>
 </template>
@@ -38,7 +36,3 @@
         }
     }
 </script>
-
-<style lang="scss">
-
-</style>

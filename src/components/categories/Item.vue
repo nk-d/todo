@@ -1,13 +1,20 @@
 <template>
-    <div class="category-item">
-        <router-link :to="{ name: 'Todos', params: { id }}" :style="{color}" class="category-item__link">{{title}}</router-link>
-        -
-        <button @click="removeCategory(id)" class="category-item__delete">X</button>
+    <div class="category" :style="{ backgroundColor: color }">
+        <h3 class="category__title">{{title}}</h3>
+        <div class="category__todos">
+            <div class="category__todos" v-for="todo in todoByCategory" :key="todo.id">
+                - {{todo.todo}}
+            </div>
+        </div>
+        <div class="category__bottom">
+            <router-link :to="{ name: 'Todos', params: { id }}" class="category__open">Открыть</router-link>
+            <button @click="removeCategory(id)" class="category__delete">Удалить</button>
+        </div>
     </div>
 </template>
 
 <script>
-    import { mapActions } from "vuex";
+    import { mapActions, mapGetters } from "vuex";
 
     export default {
         name: 'Category',
@@ -16,12 +23,18 @@
             title: String,
             color: String
         },
+        computed: {
+            ...mapGetters(["allTodos"]),
+            todoByCategory() {
+                if (this.id) {
+                    return this.allTodos.filter(todo => todo.categoryId === parseInt(this.id));
+                } else {
+                    return [];
+                }
+            }
+        },
         methods: {
             ...mapActions(["removeCategory"])
         }
     }
 </script>
-
-<style lang="scss">
-
-</style>

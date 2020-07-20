@@ -5,17 +5,12 @@ const state = {
 const getters = {
     allTodos(state) {
         return state.todos;
-    },
-    getTodosCategory(state, categoryId) {
-        console.log('id', categoryId);
-        return state.todos;
     }
 };
 
 const actions = {
     addTodo({ commit, getters }, todo) {
-        let date = new Date(),
-            id = 0;
+        let id = 0;
 
         if(getters.allTodos.length === 0) {
             id = 0;
@@ -26,10 +21,13 @@ const actions = {
         commit('newTodo', { id,
             todo: todo.todo,
             categoryId: todo.categoryId,
-            date });
+            active: todo.active });
     },
     removeTodo({ commit }, id) {
         commit('deleteTodo', id);
+    },
+    updateTodo({ commit }, updTodo) {
+        commit('updateTodo', updTodo);
     }
 };
 
@@ -37,6 +35,12 @@ const mutations = {
     newTodo: (state, todo) => state.todos.unshift(todo),
     deleteTodo: (state, id) =>
         (state.todos = state.todos.filter(todo => todo.id !== id)),
+    updateTodo: (state, updTodo) => {
+        const index = state.todos.findIndex(todo => todo.id === updTodo.id);
+        if (index !== -1) {
+            state.todos.splice(index, 1, updTodo);
+        }
+    }
 };
 
 export default {

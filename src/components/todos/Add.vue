@@ -1,16 +1,14 @@
 <template>
     <form class="add add--categories" v-on:submit.prevent="submitHandler">
 
-        <h1 class="header-level-1 add__header">Добавление категории:</h1>
+        <h2 class="header-level-2 add__header">Добавление задачи:</h2>
         <input type="text" v-model="todo" name="todo" placeholder="Ваша задача" class="add__text" />
-        <button>
-            Добавить задачу
-        </button>
-        <br>
-        <br>
+        <div class="add__bottom">
+            <button class="add__button">
+                Добавить
+            </button>
+        </div>
         <div class="add__error" v-if="emptyTodo" style="color: red;">Введите задачу</div>
-        <hr>
-
     </form>
 </template>
 
@@ -33,7 +31,8 @@
 
                     this.addTodo({
                         todo: this.todo,
-                        categoryId: parseInt(this.categoryId) });
+                        categoryId: parseInt(this.categoryId),
+                        active: true });
                     this.clearData();
 
                 } else {
@@ -52,7 +51,3 @@
         }
     }
 </script>
-
-<style lang="scss">
-
-</style>

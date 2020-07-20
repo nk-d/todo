@@ -1,7 +1,6 @@
 <template>
   <div class="todos">
     <router-link :to="{ name: 'Home' }">К выбору категорий</router-link>
-    <hr>
     <AddTodo v-if="$route.params.id !== undefined" :categoryId="$route.params.id" />
     <div v-else>Для добавления задачи, выберите категорию<hr /></div>
     <ListItems :categoryId="$route.params.id" />
@@ -17,7 +16,3 @@
     components: { AddTodo, ListItems }
   }
 </script>
-
-<style lang="scss">
-
-</style>

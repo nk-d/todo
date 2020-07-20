@@ -1,8 +1,8 @@
 <template>
-    <div class="list-categories">
+    <div class="list">
 
-        <div style="display: flex; align-items: center; justify-content: space-between">
-            <h2 class="header-level-2">Выберите категорию:</h2>
+        <div class="list__header">
+            <h1 class="header-level-1">Выберите категорию:</h1>
             <router-link :to="{ name: 'Todos' }">Все задачи</router-link>
         </div>
 
@@ -28,7 +28,3 @@
         }
     }
 </script>
-
-<style lang="scss">
-
-</style>
