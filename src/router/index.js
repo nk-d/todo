@@ -5,16 +5,16 @@ import Home from '../pages/Home.vue'
 Vue.use(VueRouter)
 
   const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import(/* webpackChunkName: "about" */ '../pages/About.vue')
-  }
+    {
+      path: '/',
+      name: 'Home',
+      component: Home
+    },
+    {
+      path: '/todos/:id?',
+      name: 'Todos',
+      component: () => import(/* webpackChunkName: "todos" */ '../pages/Todos.vue')
+    }
 ]
 
 const router = new VueRouter({

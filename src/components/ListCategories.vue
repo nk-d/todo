@@ -1,7 +1,10 @@
 <template>
     <div class="list-categories">
 
-        <h2 class="header-level-2 add__header">Выберите категорию:</h2>
+        <div style="display: flex; align-items: center; justify-content: space-between">
+            <h2 class="header-level-2">Выберите категорию:</h2>
+            <router-link :to="{ name: 'Todos' }">Все задачи</router-link>
+        </div>
 
         <Category
                 v-for="category in allCategories"

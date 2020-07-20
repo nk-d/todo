@@ -2,7 +2,7 @@
   <form class="add add--categories" v-on:submit.prevent="submitHandler">
 
     <h1 class="header-level-1 add__header">Добавление категории:</h1>
-    <input type="text" v-model="title" name="title" placeholder="Название категории" class="add__title" />
+    <input type="text" v-model="title" name="title" placeholder="Название категории" class="add__text" />
     <select name="changeColor" v-model="color" id="color" class="add__change-color">
       <option value="#ff0000">Красный</option>
       <option value="#66ff00">Зеленый</option>
