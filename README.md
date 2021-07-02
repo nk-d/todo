@@ -1,24 +1,6 @@
-# todo
+This project was bootstrapped with [Vue CLI](https://github.com/vuejs/vue-cli).
 
-## Project setup
-```
-yarn install
-```
+## Test task
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+Create a "to-do" application on Vue.js with task categories.
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
